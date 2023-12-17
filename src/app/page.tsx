@@ -14,8 +14,9 @@ import {
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import MRN from '@/images/logos/research.png'
 import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+
+import verizon from '@/images/logos/verizon.png'
+import tilden from '@/images/logos/tilden.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -159,9 +160,9 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      {/* <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
-      </div> */}
+      </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
         <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
@@ -188,36 +189,29 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Verizon',
+      title: 'Lead Software Engineer',
+      logo: verizon,
+      start: '2021',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: MRN,
-      start: '2014',
-      end: '2019',
+      company: 'Tilden Preperatory School',
+      title: 'Computer Science Teacher',
+      logo: tilden,
+      start: '2020',
+      end: '2021',
     },
-    {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
-    },
+    // {
+    //   company: 'Consultant',
+    //   title: 'iOS Software Engineer',
+    //   logo: logoFacebook,
+    //   start: '2018',
+    //   end: '2020',
+    // },
   ]
 
   return (
