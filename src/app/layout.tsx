@@ -1,5 +1,5 @@
 import { type Metadata } from 'next'
-
+import Head from 'next/head'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
@@ -27,6 +27,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <Head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+      </Head>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
         <Providers>
           <div className="flex w-full">
