@@ -11,7 +11,7 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-  TwitterIcon,
+  YouTubeIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/test3.jpeg'
 
@@ -72,12 +72,12 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Ultra runner
+            From Ultra Runner ➡️ Road Rat
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              After finding success on the trails, I returned to the roads to
-              find some speed in the marathon.
+              After finding success on the trails, I started looking for speed
+              in the marathon. What a strage place to search!
             </p>
           </div>
         </div>
@@ -90,6 +90,13 @@ export default function About() {
               Follow on Instagram
             </SocialLink> */}
             {/* youtue link! */}
+            <SocialLink
+              href="https://www.youtube.com/@MrRunnerboy22"
+              icon={YouTubeIcon}
+              className="mt-4"
+            >
+              Follow on YouTube
+            </SocialLink>
             <SocialLink
               href="https://github.com/runnerboy22"
               icon={GitHubIcon}
