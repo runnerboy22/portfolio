@@ -51,12 +51,11 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 export const metadata: Metadata = {
-  title: 'About',
-  description:
-    'I’m Tyler Wolfe. I live in New York City, where I design the future.',
+  title: 'Running',
+  description: 'Tyler Wolfe Runner',
 }
 
-export default function About() {
+export default function Running() {
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
