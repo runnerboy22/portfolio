@@ -69,10 +69,11 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Tyler Wolfe, and I love California.
+            Things I’m learning about:
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            <p>
+            <p>Andrew Ng’s ML course</p>
+            {/* <p>
               I’ve loved building things for as long as I can remember, but my
               endeavors were mostly limited to Legos and K’Nex until I
               discovered programming as a senior in college.
@@ -80,7 +81,7 @@ export default function About() {
             <p>
               Today, I’m very cognizant of the unique experiences that I’ve had
               that led me to engineering.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="lg:pl-20">
