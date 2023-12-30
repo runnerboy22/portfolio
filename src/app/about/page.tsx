@@ -68,10 +68,12 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Things I’m learning about:
+            Where I’m learning from:
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>Andrew Ng’s ML course</p>
+            <p>Aubible books</p>
+            {/* would be fun to have a dashboard displaying reading history */}
             {/* <p>
               I’ve loved building things for as long as I can remember, but my
               endeavors were mostly limited to Legos and K’Nex until I
