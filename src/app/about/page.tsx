@@ -70,11 +70,24 @@ export default function About() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Where I’m learning from:
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            <p>Andrew Ng’s ML course</p>
-            <p>Aubible books</p>
+          <div className="mt-2 space-y-2 text-base text-zinc-600 dark:text-zinc-400">
+            <li>Andrew Ng’s ML course</li>
+            <li>Aubible books</li>
             {/* would be fun to have a dashboard displaying reading history */}
-            {/* <p>
+          </div>
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Where I’ve learned from:
+          </h1>
+          <div className="mt-2 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <li>Johns Hopkins</li>
+            {/* <ul>Intro Java</ul>
+            <ul>Intro to Computing (Bash & Python)</ul> */}
+          </div>
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Where I came from:
+          </h1>
+          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <p>
               I’ve loved building things for as long as I can remember, but my
               endeavors were mostly limited to Legos and K’Nex until I
               discovered programming as a senior in college.
@@ -82,17 +95,13 @@ export default function About() {
             <p>
               Today, I’m very cognizant of the unique experiences that I’ve had
               that led me to engineering.
-            </p> */}
-          </div>
+            </p>
+        </div> */}
+
+          {/* </div> */}
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            {/* <SocialLink href="#" icon={TwitterIcon}>
-              Follow on Twitter
-            </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
-            </SocialLink> */}
             <SocialLink
               href="https://github.com/runnerboy22"
               icon={GitHubIcon}
