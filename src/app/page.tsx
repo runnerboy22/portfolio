@@ -11,9 +11,7 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
 import MRN from '@/images/logos/research.png'
-import logoFacebook from '@/images/logos/facebook.svg'
 
 import verizon from '@/images/logos/verizon.png'
 import tilden from '@/images/logos/tilden.png'
@@ -144,7 +142,7 @@ function Newsletter() {
 interface Role {
   company: string
   title: string
-  logo: ImageProps['src']
+  logo?: ImageProps['src']
   start: string | { label: string; dateTime: string }
   end: string | { label: string; dateTime: string }
 }
@@ -161,7 +159,11 @@ function Role({ role }: { role: Role }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        {role.logo ? (
+          <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        ) : (
+          <BriefcaseIcon className="h-6 w-6" />
+        )}
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -199,19 +201,22 @@ function Resume() {
       },
     },
     {
+      company: 'More Research Needed',
+      title: 'Founding Software Engineer',
+      // logo: MRN,
+      start: '2023',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
       company: 'Tilden Preperatory School',
       title: 'Computer Science Teacher',
       logo: tilden,
       start: '2020',
       end: '2021',
     },
-    // {
-    //   company: 'Consultant',
-    //   title: 'iOS Software Engineer',
-    //   logo: logoFacebook,
-    //   start: '2018',
-    //   end: '2020',
-    // },
   ]
 
   return (
