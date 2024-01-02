@@ -83,11 +83,17 @@ export default function About() {
             {/* <ul>Intro Java</ul>
             <ul>Intro to Computing (Bash & Python)</ul> */}
           </div>
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Where I came from:
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className="mt-2 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
+              I’m originally from Long Island, NY, and for some reason I didn’t
+              know about programming during high school.
+            </p>
+          </div>
+
+          {/* <p>
               I’ve loved building things for as long as I can remember, but my
               endeavors were mostly limited to Legos and K’Nex until I
               discovered programming as a senior in college.
@@ -96,7 +102,6 @@ export default function About() {
               Today, I’m very cognizant of the unique experiences that I’ve had
               that led me to engineering.
             </p>
-        </div> */}
 
           {/* </div> */}
         </div>
