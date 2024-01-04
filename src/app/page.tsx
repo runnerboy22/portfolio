@@ -285,11 +285,10 @@ export default async function Home() {
             Software engineer, founder, and aspiring elite runner.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Tyler, a software engineer and entrepreneur based in the San
+            I’m Tyler, a software engineer and bootstrapper based in the San
             Francisco Bay area. I’m the founding engineer of More Research
-            Needed, where we develop technologies that empower scientists to
-            conduct research, beyond the grasp of academic and government
-            grants.
+            Needed, where we develop technologies to fund scientists to conduct
+            research outside of academic and government grants.
           </p>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
