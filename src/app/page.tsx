@@ -12,6 +12,8 @@ import {
   TwitterIcon,
 } from '@/components/SocialIcons'
 import MRN from '@/images/logos/research.png'
+import ember from '@/images/logos/ember.jpeg'
+import emby from '@/images/logos/ember.svg'
 
 import verizon from '@/images/logos/verizon.png'
 import tilden from '@/images/logos/tilden.png'
@@ -144,7 +146,7 @@ interface Role {
   title: string
   logo?: ImageProps['src']
   start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
+  end?: string | { label: string; dateTime: string }
 }
 
 function Role({ role }: { role: Role }) {
@@ -153,8 +155,9 @@ function Role({ role }: { role: Role }) {
   let startDate =
     typeof role.start === 'string' ? role.start : role.start.dateTime
 
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
+  let endLabel = typeof role.end === 'string' ? role.end : role.end?.label ?? ''
+  let endDate =
+    typeof role.end === 'string' ? role.end : role.end?.dateTime ?? ''
 
   return (
     <li className="flex gap-4">
@@ -180,7 +183,11 @@ function Role({ role }: { role: Role }) {
           aria-label={`${startLabel} until ${endLabel}`}
         >
           <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
+          {endDate && (
+            <>
+              <span aria-hidden="true">—</span>{' '}
+            </>
+          )}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
       </dl>
@@ -209,6 +216,13 @@ function Resume() {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+    },
+
+    {
+      company: 'Ember.js',
+      title: 'Open Source Contributor',
+      logo: emby,
+      start: '2021',
     },
     {
       company: 'Tilden Preperatory School',
