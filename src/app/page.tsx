@@ -238,6 +238,13 @@ function Resume() {
       start: '2019',
       end: '2021',
     },
+    {
+      company: 'Golfing for Dollars',
+      title: 'Software Engineer',
+      // logo: candE,
+      start: '2018',
+      end: '2019',
+    },
   ]
 
   return (
