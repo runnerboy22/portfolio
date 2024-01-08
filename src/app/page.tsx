@@ -14,7 +14,7 @@ import {
 import MRN from '@/images/logos/research.png'
 import ember from '@/images/logos/ember.jpeg'
 import emby from '@/images/logos/ember.svg'
-
+import kaiser from '@/images/logos/kaiser.png'
 import verizon from '@/images/logos/verizon.png'
 import tilden from '@/images/logos/tilden.png'
 import image1 from '@/images/photos/image-1.jpg'
@@ -237,6 +237,13 @@ function Resume() {
       // logo: candE,
       start: '2019',
       end: '2021',
+    },
+    {
+      company: 'Kaiser Permanente',
+      title: 'Health Care Operations',
+      logo: kaiser,
+      start: '2019',
+      end: '2019',
     },
     {
       company: 'Golfing for Dollars',
