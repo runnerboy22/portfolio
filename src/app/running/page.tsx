@@ -94,9 +94,9 @@ export default function Running() {
               icon={YouTubeIcon}
               className="mt-4"
             >
-              Follow on YouTube
+              Subscribe on YouTube
             </SocialLink>
-            <SocialLink
+            {/* <SocialLink
               href="https://github.com/runnerboy22"
               icon={GitHubIcon}
               className="mt-4"
@@ -109,7 +109,7 @@ export default function Running() {
               className="mt-4"
             >
               Follow on LinkedIn
-            </SocialLink>
+            </SocialLink> */}
             <SocialLink
               href="mailto:tyler@more-research-needed.com"
               icon={MailIcon}
