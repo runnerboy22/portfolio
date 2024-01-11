@@ -80,6 +80,13 @@ export default function About() {
           </h1>
           <div className="mt-2 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <li>Johns Hopkins</li>
+            <ul>
+              {' '}
+              - Selfless contributions of the open source community and
+              countless individuals who write articles and make videos for
+              others to learn from.{' '}
+            </ul>
+
             {/* <ul>Intro Java</ul>
             <ul>Intro to Computing (Bash & Python)</ul> */}
           </div>
@@ -88,8 +95,11 @@ export default function About() {
           </h1>
           <div className="mt-2 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’m originally from Long Island, NY, and for some reason I didn’t
-              know about programming during high school.
+              I’m originally from Long Island, NY. Possible because of this, it
+              took until I was 21 to write my first line of code and run up a
+              mountain. These are 2 of my favorite things to do, and I often
+              wonder if I would have appreciated them as much if I had grown up
+              in a place where they were more accessible.
             </p>
           </div>
 
