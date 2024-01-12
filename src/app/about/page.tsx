@@ -136,7 +136,7 @@ export default function About() {
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              tyler@more-research-needed.com
+              atylerwolfe@gmail.com
             </SocialLink>
           </ul>
         </div>
