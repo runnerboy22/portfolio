@@ -4,22 +4,13 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoCosmos from '@/images/logos/cosmos.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 
 const projects = [
   {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
+    name: 'More Research Needed',
+    description: 'Science journal article summaries, sent to your inbox.',
     link: { href: '#', label: 'github.com' },
     logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
   },
 ]
 

@@ -79,6 +79,14 @@ export default function Running() {
               in the marathon. What a strage place to search!
             </p>
           </div>
+          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <p>
+              Training as a distance runner is time intensive, but the
+              commitment is part of the appeal to me. While racking up miles and
+              burning through shoes can be fun, it also makes you ask hard
+              questions. These answers are why I keep going out every day.
+            </p>
+          </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
