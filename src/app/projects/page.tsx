@@ -1,16 +1,24 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-
+import Image, { type ImageProps } from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoCosmos from '@/images/logos/cosmos.svg'
 
-const projects = [
+interface Project {
+  name: string
+  description: string
+  logo?: ImageProps['src']
+  link?: {
+    href: string
+    label: string
+  }
+}
+
+const projects: Array<Project> = [
   {
     name: 'More Research Needed',
     description: 'Science journal article summaries, sent to your inbox.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+    // link: { href: '#', label: 'github.com' },
+    // logo
   },
 ]
 
@@ -30,7 +38,7 @@ export const metadata: Metadata = {
   description: 'Things I’ve made trying to put my dent in the universe.',
 }
 
-export default function Projects() {
+export default function Project({ project }: { project: Project }) {
   return (
     <SimpleLayout
       title="Things I’ve made trying to put my dent in the universe."
@@ -43,21 +51,35 @@ export default function Projects() {
         {projects.map((project) => (
           <Card as="li" key={project.name}>
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-              />
+              {project.logo ? (
+                <Image
+                  src={project.logo}
+                  alt=""
+                  className="h-8 w-8"
+                  unoptimized
+                />
+              ) : (
+                '{}'
+              )}
             </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
+            {project.link ? (
+              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              </h2>
+            ) : (
+              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <Card>{project.name}</Card>
+              </h2>
+            )}
             <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
+            {project.link ? (
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{project.link.label}</span>
+              </p>
+            ) : (
+              ''
+            )}
           </Card>
         ))}
       </ul>
