@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   description: 'Things I’ve made trying to put my dent in the universe.',
 }
 
-export default function Project({ project }: { project: Project }) {
+function Project({ project }: { project: Project }) {
   return (
     <SimpleLayout
       title="Things I’ve made trying to put my dent in the universe."
@@ -84,5 +84,15 @@ export default function Project({ project }: { project: Project }) {
         ))}
       </ul>
     </SimpleLayout>
+  )
+}
+
+export default function ProjectsPage() {
+  return (
+    <>
+      {projects.map((project, index) => (
+        <Project key={index} project={project} />
+      ))}
+    </>
   )
 }
