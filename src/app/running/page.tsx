@@ -119,7 +119,7 @@ export default function Running() {
               Follow on LinkedIn
             </SocialLink> */}
             <SocialLink
-              href="mailto:tyler@more-research-needed.com"
+              href="mailto:runnerboy22@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >

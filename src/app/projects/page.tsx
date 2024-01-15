@@ -2,6 +2,8 @@ import { type Metadata } from 'next'
 import Image, { type ImageProps } from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import Link from 'next/link'
+import clsx from 'clsx'
 
 interface Project {
   name: string
@@ -22,6 +24,41 @@ const projects: Array<Project> = [
   },
 ]
 
+function SocialLink({
+  className,
+  href,
+  children,
+  icon: Icon,
+}: {
+  className?: string
+  href: string
+  icon: React.ComponentType<{ className?: string }>
+  children: React.ReactNode
+}) {
+  return (
+    <li className={clsx(className, 'flex')}>
+      <Link
+        href={href}
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+      >
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <span className="ml-4">{children}</span>
+      </Link>
+    </li>
+  )
+}
+
+function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        fillRule="evenodd"
+        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
+      />
+    </svg>
+  )
+}
+
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -40,50 +77,74 @@ export const metadata: Metadata = {
 
 function Project({ project }: { project: Project }) {
   return (
-    <SimpleLayout
-      title="Things I’ve made."
-      // intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
-    >
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    <>
+      <SimpleLayout
+        title="Things I’ve made."
+        intro="Shoot me a message if you'd like to collaborate!"
       >
-        {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              {project.logo ? (
-                <Image
-                  src={project.logo}
-                  alt=""
-                  className="h-8 w-8"
-                  unoptimized
-                />
+        {/* <Container className="mt-16 sm:mt-32">
+      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+         */}
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {projects.map((project) => (
+            <Card as="li" key={project.name}>
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                {project.logo ? (
+                  <Image
+                    src={project.logo}
+                    alt=""
+                    className="h-8 w-8"
+                    unoptimized
+                  />
+                ) : (
+                  '{}'
+                )}
+              </div>
+              {project.link ? (
+                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                </h2>
               ) : (
-                '{}'
+                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  <Card>{project.name}</Card>
+                </h2>
               )}
-            </div>
-            {project.link ? (
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
-              </h2>
-            ) : (
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card>{project.name}</Card>
-              </h2>
-            )}
-            <Card.Description>{project.description}</Card.Description>
-            {project.link ? (
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
-            ) : (
-              ''
-            )}
-          </Card>
-        ))}
-      </ul>
-    </SimpleLayout>
+              <Card.Description>{project.description}</Card.Description>
+              {project.link ? (
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                  <LinkIcon className="h-6 w-6 flex-none" />
+                  <span className="ml-2">{project.link.label}</span>
+                </p>
+              ) : (
+                ''
+              )}
+            </Card>
+          ))}
+        </ul>
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <SocialLink
+            href="mailto:tyler@more-research-needed.com"
+            icon={MailIcon}
+            className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+          >
+            tyler@more-research-needed.com
+          </SocialLink>
+        </ul>
+        {/* </div>
+    </Container> */}
+      </SimpleLayout>
+      {/* <div className="lg:pl-20">
+        <ul role="list"> */}
+
+      {/* </ul>
+      </div> */}
+    </>
   )
 }
 
