@@ -5,6 +5,8 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { YouTubeIcon, InstagramIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/test3.jpeg'
+import { Button } from '@/components/Button'
+import { ArrowDownIcon } from '../page'
 
 function SocialLink({
   className,
@@ -78,6 +80,12 @@ export default function Running() {
               questions. These answers are why I keep going out every day.
             </p>
           </div>
+          {/* <a href="/Tyler Wolfe Runner Resume.pdf" download>
+            <Button variant="secondary" className="group mt-6 w-full">
+              Running Resume
+              <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+            </Button>
+          </a> */}
         </div>
         <div className="lg:pl-20">
           <ul role="list">
