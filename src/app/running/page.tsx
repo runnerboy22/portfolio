@@ -6,8 +6,19 @@ import { Container } from '@/components/Container'
 import { YouTubeIcon, InstagramIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/test3.jpeg'
 import { Button } from '@/components/Button'
-import { ArrowDownIcon } from '../page'
 
+function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
 function SocialLink({
   className,
   href,
