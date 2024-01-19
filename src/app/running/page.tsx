@@ -88,7 +88,7 @@ export default function Running() {
               Training as a distance runner is time intensive, but the
               commitment is part of the appeal to me. While racking up miles and
               burning through shoes can be fun, it also makes you ask hard
-              questions. These answers are why I keep going out every day.
+              questions. The answers are why I keep going out every day.
             </p>
           </div>
           {/* <a href="/Tyler Wolfe Runner Resume.pdf" download>
