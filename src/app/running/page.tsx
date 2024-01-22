@@ -77,7 +77,7 @@ export default function Running() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             From Ultra Runner ➡️ Road Rat
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className="mt-2 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               After finding success on the trails, I started looking for speed
               in the marathon. What a strage place to search!
@@ -90,6 +90,12 @@ export default function Running() {
               burning through shoes can be fun, it also makes you ask hard
               questions. The answers are why I keep going out every day.
             </p>
+          </div>
+          <h1 className="mt-5 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            2024 Goals:
+          </h1>
+          <div className="mt-1 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <li>Headlands 50k</li>
           </div>
           <a href="/Tyler Wolfe Running Resume.pdf" download>
             <Button variant="secondary" className="group mt-6 w-full">
