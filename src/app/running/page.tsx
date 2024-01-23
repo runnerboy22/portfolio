@@ -3,7 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
-import { YouTubeIcon, InstagramIcon } from '@/components/SocialIcons'
+import {
+  YouTubeIcon,
+  InstagramIcon,
+  StravaIcon,
+} from '@/components/SocialIcons'
 import portraitImage from '@/images/test3.jpeg'
 import { Button } from '@/components/Button'
 
@@ -105,6 +109,13 @@ export default function Running() {
           </a>
         </div>
         <div className="lg:pl-20">
+          <SocialLink
+            href="https://www.youtube.com/@MrRunnerboy22"
+            icon={StravaIcon}
+            className="mt-4"
+          >
+            Follow on Strava
+          </SocialLink>
           <ul role="list">
             <SocialLink
               href="https://www.instagram.com/atylerwolfe/"
