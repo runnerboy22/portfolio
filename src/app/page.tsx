@@ -198,6 +198,15 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
+      company: 'More Research Needed',
+      title: 'Founding Software Engineer',
+      start: '2023',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
       company: 'Verizon',
       title: 'Lead Software Engineer',
       logo: verizon,
@@ -207,20 +216,10 @@ function Resume() {
         dateTime: new Date().getFullYear().toString(),
       },
     },
-    {
-      company: 'More Research Needed',
-      title: 'Founding Software Engineer',
-      // logo: MRN,
-      start: '2023',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
-      },
-    },
 
     {
       company: 'Ember.js',
-      title: 'Open Source Contributor',
+      title: 'Open Source Developer',
       logo: emby,
       start: '2021',
     },
