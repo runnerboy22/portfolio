@@ -1,3 +1,5 @@
+'use client'
+
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -24,6 +26,7 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
+import { useState, useEffect } from 'react'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -301,8 +304,20 @@ function Photos() {
   )
 }
 
-export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
+export default function Home() {
+  // let articles = (await getAllArticles()).slice(0, 4)
+
+  // async function audible() {
+  //   const data = await fetch('api/audible')
+  //   const json = await data.json()
+  //   console.log(json.message)
+  //   setAudible(json.message)
+  // }
+  // const [audibleBooks, setAudible] = useState(false)
+
+  // useEffect(() => {
+  //   audible()
+  // }, [])
 
   return (
     <>
@@ -324,6 +339,12 @@ export default async function Home() {
             Needed, where we develop technologies to fund scientists to conduct
             research outside of academic and government grants.
           </p>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Reading List:
+          </h1>
+          {/* <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            {audibleBooks}
+          </p> */}
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
               href="https://twitter.com"
