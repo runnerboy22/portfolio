@@ -307,17 +307,17 @@ function Photos() {
 export default function Home() {
   // let articles = (await getAllArticles()).slice(0, 4)
 
-  // async function audible() {
-  //   const data = await fetch('api/audible')
-  //   const json = await data.json()
-  //   console.log(json.message)
-  //   setAudible(json.message)
-  // }
-  // const [audibleBooks, setAudible] = useState(false)
+  async function audible() {
+    const data = await fetch('api/audible')
+    const json = await data.json()
+    console.log(json.message)
+    setAudible(json.message)
+  }
+  const [audibleBooks, setAudible] = useState(false)
 
-  // useEffect(() => {
-  //   audible()
-  // }, [])
+  useEffect(() => {
+    audible()
+  }, [])
 
   return (
     <>
@@ -342,9 +342,9 @@ export default function Home() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Reading List:
           </h1>
-          {/* <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             {audibleBooks}
-          </p> */}
+          </p>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
               href="https://twitter.com"
