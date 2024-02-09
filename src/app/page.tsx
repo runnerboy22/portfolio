@@ -28,6 +28,12 @@ import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import { useState, useEffect } from 'react'
 
+interface Book {
+  id: string
+  title: string
+  author: string
+}
+
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
@@ -305,15 +311,16 @@ function Photos() {
 }
 
 export default function Home() {
-  // let articles = (await getAllArticles()).slice(0, 4)
-
   async function audible() {
     const data = await fetch('api/audible')
     const json = await data.json()
-    console.log(json.message)
-    setAudible(json.message)
+    console.log(json)
+    setAudible(json)
+    setIsLoading(false)
   }
-  const [audibleBooks, setAudible] = useState(false)
+
+  const [audibleBooks, setAudible] = useState<Book[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     audible()
@@ -339,12 +346,23 @@ export default function Home() {
             Needed, where we develop technologies to fund scientists to conduct
             research outside of academic and government grants.
           </p>
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Reading List:
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            {audibleBooks}
-          </p>
+          <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            {isLoading ? (
+              <p>Loading...</p>
+            ) : (
+              Object.values(audibleBooks).map((book: Book) => (
+                <div key={book.id}>
+                  <h2>
+                    {book.title}, {book.author}
+                  </h2>
+                </div>
+              ))
+            )}
+          </div> */}
+
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
               href="https://twitter.com"
