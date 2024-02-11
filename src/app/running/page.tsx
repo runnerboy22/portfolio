@@ -110,7 +110,7 @@ export default function Running() {
         </div>
         <div className="lg:pl-20">
           <SocialLink
-            href="https://www.youtube.com/@MrRunnerboy22"
+            href="https://www.strava.com/athletes/10702563"
             icon={StravaIcon}
             className="mt-4"
           >
