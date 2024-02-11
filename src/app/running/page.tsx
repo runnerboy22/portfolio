@@ -84,7 +84,7 @@ export default function Running() {
           <div className="mt-2 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               After finding success on the trails, I started looking for speed
-              in the marathon. What a strage place to search!
+              in the marathon. What a strange place to search!
             </p>
           </div>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
