@@ -95,7 +95,7 @@ export default function About() {
           </h1>
           <div className="mt-2 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’m originally from Long Island, NY. Possible because of this, it
+              I’m originally from Long Island, NY. Possibly because of this, it
               took until I was 21 to write my first line of code and run up a
               mountain. These are 2 of my favorite things to do, and I often
               wonder if I would have appreciated them as much if I had grown up
