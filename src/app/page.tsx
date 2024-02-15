@@ -312,11 +312,15 @@ function Photos() {
 
 export default function Home() {
   async function audible() {
-    const data = await fetch('api/audible')
-    const json = await data.json()
-    console.log(json)
-    setAudible(json)
-    setIsLoading(false)
+    const cachedData = localStorage.getItem('audibleData')
+    let data
+    if (cachedData) {
+      data = JSON.parse(cachedData)
+    } else {
+      const response = await fetch('api/audible')
+      data = await response.json()
+      localStorage.setItem('audibleData', JSON.stringify(data))
+    }
   }
 
   const [audibleBooks, setAudible] = useState<Book[]>([])
@@ -346,6 +350,19 @@ export default function Home() {
             Needed, where we develop technologies to fund scientists to conduct
             research outside of academic and government grants.
           </p>
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <div>
+              {audibleBooks.map((book) => (
+                <div key={book.id}>
+                  <h2>
+                    {book.title}, {book.author}
+                  </h2>
+                </div>
+              ))}
+            </div>
+          )}
           {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Reading List:
           </h1>
