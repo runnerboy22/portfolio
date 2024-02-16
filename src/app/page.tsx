@@ -311,23 +311,38 @@ function Photos() {
 }
 
 export default function Home() {
-  async function audible() {
-    const cachedData = localStorage.getItem('audibleData')
-    let data
-    if (cachedData) {
-      data = JSON.parse(cachedData)
-    } else {
-      const response = await fetch('api/audible')
-      data = await response.json()
-      localStorage.setItem('audibleData', JSON.stringify(data))
-    }
-  }
+  // async function audible() {
+  //   // const cachedData = localStorage.getItem('audibleData')
+  //   let data
+  //   // if (cachedData) {
+  //   // data = JSON.parse(cachedData)
+  //   // } else {
+  //   const response = await fetch('api/audible')
+  //   data = await response.json()
+  //   // localStorage.setItem('audibleData', JSON.stringify(data))
+  //   setAudible(data)
+  // }
 
-  const [audibleBooks, setAudible] = useState<Book[]>([])
+  const [audibleBooks, setAudible] = useState<string[]>([])
+  // const [audibleBooks, setAudible] = useState<Book[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    audible()
+    async function fetchAudibleBooks() {
+      setIsLoading(true) // Set loading to true before fetching
+      try {
+        const response = await fetch('api/audible')
+        const data = await response.json()
+        console.log(data)
+        setAudible(data) // Assuming 'data' is in the correct format
+      } catch (error) {
+        console.error('Failed to fetch books', error)
+        // Optionally, handle errors, e.g., by setting an error state
+      }
+      setIsLoading(false) // Set loading to false after fetching
+    }
+
+    fetchAudibleBooks()
   }, [])
 
   return (
@@ -350,27 +365,28 @@ export default function Home() {
             Needed, where we develop technologies to fund scientists to conduct
             research outside of academic and government grants.
           </p>
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Reading List:
+          </h1>
           {isLoading ? (
             <p>Loading...</p>
           ) : (
             <div>
-              {audibleBooks.map((book) => (
-                <div key={book.id}>
-                  <h2>
-                    {book.title}, {book.author}
-                  </h2>
-                </div>
+              {audibleBooks.map((book, index) => (
+                // <div key={book.id}>
+                <p key={index}>
+                  {book}
+                  {/* <div key={book.id}> */}
+          {/* <h2></h2>
+                </p>
               ))}
             </div>
-          )}
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Reading List:
-          </h1>
-          <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          )} */}
+          {/* <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             {isLoading ? (
               <p>Loading...</p>
             ) : (
-              Object.values(audibleBooks).map((book: Book) => (
+              audibleBooks.map((book: Book) => (
                 <div key={book.id}>
                   <h2>
                     {book.title}, {book.author}
