@@ -29,7 +29,7 @@ import { formatDate } from '@/lib/formatDate'
 import { useState, useEffect } from 'react'
 
 interface Book {
-  id: string
+  // id: string
   title: string
   author: string
 }
@@ -323,8 +323,8 @@ export default function Home() {
   //   setAudible(data)
   // }
 
-  const [audibleBooks, setAudible] = useState<string[]>([])
-  // const [audibleBooks, setAudible] = useState<Book[]>([])
+  // const [audibleBooks, setAudible] = useState<string[]>([])
+  const [audibleBooks, setAudible] = useState<Book[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -365,23 +365,20 @@ export default function Home() {
             Needed, where we develop technologies to fund scientists to conduct
             research outside of academic and government grants.
           </p>
+          {/* this is an array */}
           {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Reading List:
           </h1>
           {isLoading ? (
             <p>Loading...</p>
           ) : (
-            <div>
-              {audibleBooks.map((book, index) => (
-                // <div key={book.id}>
-                <p key={index}>
-                  {book}
-                  {/* <div key={book.id}> */}
-          {/* <h2></h2>
-                </p>
-              ))}
-            </div>
+            audibleBooks.map((book, index) => (
+              <p key={index}>
+                {book.title}, {book.author}
+              </p>
+            ))
           )} */}
+
           {/* <div className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             {isLoading ? (
               <p>Loading...</p>
