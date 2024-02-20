@@ -26,13 +26,7 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
-import { useState, useEffect } from 'react'
 
-interface Book {
-  // id: string
-  title: string
-  author: string
-}
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -324,26 +318,7 @@ export default function Home() {
   // }
 
   // const [audibleBooks, setAudible] = useState<string[]>([])
-  const [audibleBooks, setAudible] = useState<Book[]>([])
-  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    async function fetchAudibleBooks() {
-      setIsLoading(true) // Set loading to true before fetching
-      try {
-        const response = await fetch('api/audible')
-        const data = await response.json()
-        console.log(data)
-        setAudible(data) // Assuming 'data' is in the correct format
-      } catch (error) {
-        console.error('Failed to fetch books', error)
-        // Optionally, handle errors, e.g., by setting an error state
-      }
-      setIsLoading(false) // Set loading to false after fetching
-    }
-
-    fetchAudibleBooks()
-  }, [])
 
   return (
     <>
