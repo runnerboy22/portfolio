@@ -305,20 +305,6 @@ function Photos() {
 }
 
 export default function Home() {
-  // async function audible() {
-  //   // const cachedData = localStorage.getItem('audibleData')
-  //   let data
-  //   // if (cachedData) {
-  //   // data = JSON.parse(cachedData)
-  //   // } else {
-  //   const response = await fetch('api/audible')
-  //   data = await response.json()
-  //   // localStorage.setItem('audibleData', JSON.stringify(data))
-  //   setAudible(data)
-  // }
-
-  // const [audibleBooks, setAudible] = useState<string[]>([])
-
 
   return (
     <>
